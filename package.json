@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/ashishakya/cypress#readme",
   "devDependencies": {
-    "cypress": "^9.2.0"
+    "cypress": "8.4.1"
   }
 }

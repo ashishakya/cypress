@@ -1,6 +1,12 @@
 # CYPRESS
 Modern days automation testing framework.
 
+# INSTALLATION
+ - Run `yarn`  or `npm install` command/
+# Commands:
+Use one of the following command to start runner
+ - `yarn cypress:open`
+ - `npm run cypress:open`
 # Directory Structure
 
  | Directory             | Description                                                                                                                                             |
