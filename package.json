@@ -1,0 +1,24 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Modern days automation testing framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishakya/cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashishakya/cypress/issues"
+  },
+  "homepage": "https://github.com/ashishakya/cypress#readme",
+  "devDependencies": {
+    "cypress": "^9.2.0"
+  }
+}
