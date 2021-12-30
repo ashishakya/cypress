@@ -15,3 +15,11 @@ Modern days automation testing framework.
 | plugin->index.js      | Extend the cypress functionality; location where we can add plugins.                                                                                    |
 | integration           | The main folder where we store our test files. Cypress test runner will look into this folder in order to location test files.                          |
 | fixtures              | where we keep our test data objects, mocked objects and any other data which we need for our tests. Mostly we add JSON files.                           |
+
+
+# MOCHA
+
+| function   | description                     |
+|------------|---------------------------------|
+| describe() | Used to define multiple test.   |
+| it()       | Used to define individual test. |
