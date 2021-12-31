@@ -29,3 +29,9 @@ Use one of the following command to start runner
 |------------|---------------------------------|
 | describe() | Used to define multiple test.   |
 | it()       | Used to define individual test. |
+
+
+# References:
+
+- https://www.udemy.com/course/cypress-io-master-class/
+- https://www.w3schools.com/xml/xpath_syntax.asp
