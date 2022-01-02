@@ -16,12 +16,14 @@ describe("Inspect automation Test Store item using chain of commands", () => {
 
     });
 
-    it("Click on the first item using item text", () => {
+    it.only("Click on the first item using item text", () => {
         //prepare
         cy.visit(landingPageUrl);
 
         // perform
-        cy.get('.prdocutname').contains("Skinsheen Bronzer Stick").click();
+        cy.get('.prdocutname').contains("Skinsheen Bronzer Stick")
+            .click()
+            .then((itemHeaderText)=>console.log(itemHeaderText.text()));
 
         //predict
 

@@ -12,7 +12,7 @@ describe("Test contact us page form via Automation Test Store", () => {
         // cy.get('.info_links_footer > :nth-child(5) > a').click();
         // cy.get('a[href="https://automationteststore.com/index.php?rt=content/contact"]').click();
         // cy.xpath("//a[contains(@href, 'contact')]").click()
-        cy.get("a[href$='contact']").click(); //here $ means ends with
+        cy.get("a[href$='contact']").click().then((element)=>console.log(element.text())); //here $ means ends with
 
         cy.get('#ContactUsFrm_first_name').type("first name");
 
@@ -31,5 +31,6 @@ describe("Test contact us page form via Automation Test Store", () => {
             "have.text",
             "Your enquiry has been successfully sent to the store owner!"
         )
+        cy.log("las ma huncha")
     });
 })
