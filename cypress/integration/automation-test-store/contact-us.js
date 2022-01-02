@@ -17,6 +17,7 @@ describe("Test contact us page form via Automation Test Store", () => {
         cy.get('#ContactUsFrm_first_name').type("first name");
 
         cy.get('#ContactUsFrm_email').type('demo@demo.com');
+        cy.get('#ContactUsFrm_email').should('have.attr', "name", "email");
 
         // cy.get('#ContactUsFrm_enquiry').type("demo enquiry");
         // cy.get("//textarea[@id='ContactUsFrm_enquiry']")
@@ -26,5 +27,9 @@ describe("Test contact us page form via Automation Test Store", () => {
         cy.get("button[title='Submit']").click()
 
         //predict
+        cy.get('.mb40 > :nth-child(3)').should(
+            "have.text",
+            "Your enquiry has been successfully sent to the store owner!"
+        )
     });
 })

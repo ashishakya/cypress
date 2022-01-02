@@ -35,3 +35,5 @@ Use one of the following command to start runner
 
 - https://www.udemy.com/course/cypress-io-master-class/
 - https://www.w3schools.com/xml/xpath_syntax.asp
+- https://www.chaijs.com/guide/styles/#expect
+- https://docs.cypress.io/guides/references/assertions#BDD-Assertions
