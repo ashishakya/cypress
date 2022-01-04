@@ -38,3 +38,4 @@ Use one of the following command to start runner
 - https://www.chaijs.com/guide/styles/#expect
 - https://docs.cypress.io/guides/references/assertions#BDD-Assertions
 - https://docs.cypress.io/api/commands/contains#Syntax
+- https://github.com/cypress-io/github-action#headless
