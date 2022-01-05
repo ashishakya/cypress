@@ -8,6 +8,8 @@ describe("Test contact us page form via WebdriverUni", () => {
     it("Should be able to submit a successful submission via contact us form", () => {
         //prepare
         cy.visit(landingPageUrl);
+        cy.visit('https://google.com') // this will error
+
         cy.get("#contact-us").invoke("removeAttr", "target").click({force:true});
         cy.document().should("have.property", "charset", "UTF-8")
         cy.title().should('eq', 'WebDriver | Contact Us')
