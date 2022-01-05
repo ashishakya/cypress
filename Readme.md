@@ -39,3 +39,4 @@ Use one of the following command to start runner
 - https://docs.cypress.io/guides/references/assertions#BDD-Assertions
 - https://docs.cypress.io/api/commands/contains#Syntax
 - https://github.com/cypress-io/github-action#headless
+- https://example.cypress.io/commands/location#url
