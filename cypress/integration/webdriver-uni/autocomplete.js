@@ -11,7 +11,8 @@ describe("Verify state of autocomplete", ()=>{
         cy.get("@items").each((item, index)=>{
             const productToSelect = "Garlic";
             if(item.attr("value")===productToSelect){
-                item.click();
+                // item.click();
+                item.trigger("click");
                 cy.get('#submit-button').click()
                 cy.log(cy.url());
                 cy.url().should("include", productToSelect)
@@ -22,7 +23,9 @@ describe("Verify state of autocomplete", ()=>{
             cy.get("@items").each((item, index)=>{
                 const newProductToSelect = "Grapes";
                 if(item.attr("value")===newProductToSelect){
-                    item.click();
+                    // item.click();
+                    item.trigger("click");
+
                     cy.get('#submit-button').click()
                     cy.log(cy.url());
                     cy.url().should("include", newProductToSelect)
