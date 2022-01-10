@@ -13,13 +13,15 @@ describe("Traversing DOM elements in Cypress", () => {
     // selects close ul from element having the class traversal-badge
   });
 
-  it.only("eq() to retrieve a specific element based on index", () => {
+  it("eq() to retrieve a specific element based on index", () => {
     // select milk from the list
     cy.get(".traversal-drinks-list").children().eq(2).should('contain', "Milk")
   });
 
-  it("filter() to retrieve DOM elements that match a specific selector", () => {
-
+  it.only("filter() to retrieve DOM elements that match a specific selector", () => {
+    cy.get(".btn-group-toggle > *").filter(".active")
+        .should("have.class", "active")
+        .should("contain","Button-1")
   });
 
   it("find() to retrieve DOM elements of a given selector", () => {
