@@ -8,12 +8,14 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get(".traversal-breadcrumb").children(".active").should("contain", "Contact Us")
   });
 
-  it.only("closest() to validate the closest ancestor DOM element", () => {
+  it("closest() to validate the closest ancestor DOM element", () => {
     cy.get(".traversal-badge").closest("ul").should("have.class", "list-group")
     // selects close ul from element having the class traversal-badge
   });
 
-  it("eq() to retrieve a specific element based on index", () => {
+  it.only("eq() to retrieve a specific element based on index", () => {
+    // select milk from the list
+    cy.get(".traversal-drinks-list").children().eq(2).should('contain', "Milk")
   });
 
   it("filter() to retrieve DOM elements that match a specific selector", () => {
