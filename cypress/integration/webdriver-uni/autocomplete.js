@@ -14,8 +14,20 @@ describe("Verify state of autocomplete", ()=>{
                 item.click();
                 cy.get('#submit-button').click()
                 cy.log(cy.url());
-                cy.url().should("include", productToSelect);
+                cy.url().should("include", productToSelect)
             }
+        }).then(()=>{
+            cy.get('#myInput').type("g")
+
+            cy.get("@items").each((item, index)=>{
+                const newProductToSelect = "Grapes";
+                if(item.attr("value")===newProductToSelect){
+                    item.click();
+                    cy.get('#submit-button').click()
+                    cy.log(cy.url());
+                    cy.url().should("include", newProductToSelect)
+                }
+            })
         })
 
     });
