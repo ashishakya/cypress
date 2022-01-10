@@ -4,11 +4,13 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.visit("http://webdriveruniversity.com/");
     cy.get("#data-table").invoke("removeAttr", "target").click({force: true});
   })
-  it.only("children() to get the children of DOM elements", () => {
+  it("children() to get the children of DOM elements", () => {
     cy.get(".traversal-breadcrumb").children(".active").should("contain", "Contact Us")
   });
 
-  it("closest() to validate the closest ancestor DOM element", () => {
+  it.only("closest() to validate the closest ancestor DOM element", () => {
+    cy.get(".traversal-badge").closest("ul").should("have.class", "list-group")
+    // selects close ul from element having the class traversal-badge
   });
 
   it("eq() to retrieve a specific element based on index", () => {
