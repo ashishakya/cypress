@@ -52,12 +52,14 @@ describe("Traversing DOM elements in Cypress", () => {
         .should("not.have.text", "Warning")
   });
 
-  it.only("parent() To get parent DOM element of elements", () => {
+  it("parent() To get parent DOM element of elements", () => {
     cy.get(".traversal-mark").parent().should("contain", "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
     cy.get(".traversal-marked-text").parent().should("have.class", "thumbnail")
   });
 
-  it("parents() to get parents DOM element of elements", () => {
+  it.only("parents() to get parents DOM element of elements", () => {
+    cy.get(".traversal-cite").parents().should("have.class", "thumbnail")
+    cy.get(".traversal-cite").parents().should("match", "blockquote")
   });
 
   it("prev() to get the previous sibling DOM element within elements", () => {
