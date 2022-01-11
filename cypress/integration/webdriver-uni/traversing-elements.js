@@ -28,11 +28,13 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get(".traversal-pagination").find("li").find("a").should("have.length", 7)
   });
 
-  it.only("first() to retrieve the first DOM element within elements ", () => {
+  it("first() to retrieve the first DOM element within elements ", () => {
     cy.get(".bg-info > td").first().should("contain.text", "Andy")
   });
 
-  it("last() to retrieve the last DOM element within elements", () => {
+  it.only("last() to retrieve the last DOM element within elements", () => {
+    cy.get(".bg-info > td").last().should("contain.text", "Scott")
+
   });
 
   it("nextAll() to get all of the next sibling DOM elements within elements", () => {
