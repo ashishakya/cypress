@@ -62,7 +62,7 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get(".traversal-cite").parents().should("match", "blockquote") // match checks if the children is wrapped in blockquote tag
   });
 
-  it.only("prev() to get the previous sibling DOM element within elements", () => {
+  it("prev() to get the previous sibling DOM element within elements", () => {
     cy.get("#milk")
         .prev()
         .should("match", "li")
@@ -70,7 +70,8 @@ describe("Traversing DOM elements in Cypress", () => {
         .should("have.id", "tea")
   });
 
-  it("prevAll() to get all previous sibling DOM elements within elements", () => {
+  it.only("prevAll() to get all previous sibling DOM elements within elements", () => {
+      cy.get(".sales").prevAll().should("have.length", 2)
   });
 
   it("prevUntil() to get all previous sibling DOM elements within elements until other element", () => {
