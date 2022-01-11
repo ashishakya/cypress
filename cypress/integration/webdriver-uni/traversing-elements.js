@@ -32,15 +32,18 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get(".bg-info > td").first().should("contain.text", "Andy")
   });
 
-  it.only("last() to retrieve the last DOM element within elements", () => {
+  it("last() to retrieve the last DOM element within elements", () => {
     cy.get(".bg-info > td").last().should("contain.text", "Scott")
-
   });
 
   it("nextAll() to get all of the next sibling DOM elements within elements", () => {
+    // cy.get(".traversal-drinks-list").find("li").contains("Tea").nextAll().should("have.length", 3)
+    cy.get.contains("Tea").nextAll().should("have.length", 3)
   });
 
-  it("nextUntil() to get all of the next sibling DOM elements within elements until another element", () => {
+  it.only("nextUntil() to get all of the next sibling DOM elements within elements until another element", () => {
+    // starting dekhi end samma ko bich ma kaati data cha
+    cy.get("#coffee").nextUntil("#espresso").should("have.length", 2)
   });
 
   it("not() to remove DOM element(s) from the set of elements", () => {
