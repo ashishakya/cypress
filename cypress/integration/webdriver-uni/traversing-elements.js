@@ -57,12 +57,17 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get(".traversal-marked-text").parent().should("have.class", "thumbnail")
   });
 
-  it.only("parents() to get parents DOM element of elements", () => {
+  it("parents() to get parents DOM element of elements", () => {
     cy.get(".traversal-cite").parents().should("have.class", "thumbnail")
-    cy.get(".traversal-cite").parents().should("match", "blockquote")
+    cy.get(".traversal-cite").parents().should("match", "blockquote") // match checks if the children is wrapped in blockquote tag
   });
 
-  it("prev() to get the previous sibling DOM element within elements", () => {
+  it.only("prev() to get the previous sibling DOM element within elements", () => {
+    cy.get("#milk")
+        .prev()
+        .should("match", "li")
+        .should("contain", "Tea")
+        .should("have.id", "tea")
   });
 
   it("prevAll() to get all previous sibling DOM elements within elements", () => {
