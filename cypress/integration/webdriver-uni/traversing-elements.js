@@ -41,12 +41,15 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get.contains("Tea").nextAll().should("have.length", 3)
   });
 
-  it.only("nextUntil() to get all of the next sibling DOM elements within elements until another element", () => {
+  it("nextUntil() to get all of the next sibling DOM elements within elements until another element", () => {
     // starting dekhi end samma ko bich ma kaati data cha
     cy.get("#coffee").nextUntil("#espresso").should("have.length", 2)
   });
 
-  it("not() to remove DOM element(s) from the set of elements", () => {
+  it.only("not() to remove DOM element(s) from the set of elements", () => {
+    cy.get(".traversal-button-states > button").not(".disabled")
+        .should("not.have.class", "disabled")
+        .should("not.have.text", "Warning")
   });
 
   it("parent() To get parent DOM element of elements", () => {
