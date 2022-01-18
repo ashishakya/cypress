@@ -5,10 +5,17 @@ const landingPageUrl = "http://webdriveruniversity.com";
 const assert = require("assert");
 
 describe("Test contact us page form via WebdriverUni", () => {
-    it("Should be able to submit a successful submission via contact us form", () => {
+    // load the data once before the test executes
+    before(()=>{
+        cy.fixture("example.json").then((data)=>{
+            // this.data = data;
+            globalThis.data =data // this works as well
+        })
+    })
+    it.only("Should be able to submit a successful submission via contact us form", () => {
         //prepare
         cy.visit(landingPageUrl);
-        cy.visit('https://google.com') // this will error
+        // cy.visit('https://google.com') // this will error
 
         cy.get("#contact-us").invoke("removeAttr", "target").click({force:true});
         cy.document().should("have.property", "charset", "UTF-8")
@@ -17,9 +24,9 @@ describe("Test contact us page form via WebdriverUni", () => {
 
 
         // perform
-        cy.get('[name="first_name"]').type("first name");
-        cy.get('[name="last_name"]').type("last name");
-        cy.get('[name="email"]').type("testemail@email.com");
+        cy.get('[name="first_name"]').type(data.first_name);
+        cy.get('[name="last_name"]').type(data.last_name);
+        cy.get('[name="email"]').type(data.email);
         cy.get('textarea.feedback-input').type("this is my demo feedback");
         cy.get('[type="submit"]').click()
 
