@@ -6,10 +6,10 @@ const assert = require("assert");
 
 describe("Test contact us page form via WebdriverUni", () => {
     // load the data once before the test executes
-    before(()=>{
-        cy.fixture("example.json").then((data)=>{
+    before(() => {
+        cy.fixture("example.json").then((data) => {
             // this.data = data;
-            globalThis.data =data // this works as well
+            globalThis.data = data // this works as well
         })
     })
     it.only("Should be able to submit a successful submission via contact us form", () => {
@@ -17,17 +17,25 @@ describe("Test contact us page form via WebdriverUni", () => {
         cy.visit(landingPageUrl);
         // cy.visit('https://google.com') // this will error
 
-        cy.get("#contact-us").invoke("removeAttr", "target").click({force:true});
+        cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
         cy.document().should("have.property", "charset", "UTF-8")
         cy.title().should('eq', 'WebDriver | Contact Us')
         cy.url().should('include', 'contactus.html') // => true
 
 
         // perform
-        cy.get('[name="first_name"]').type(data.first_name);
-        cy.get('[name="last_name"]').type(data.last_name);
-        cy.get('[name="email"]').type(data.email);
-        cy.get('textarea.feedback-input').type("this is my demo feedback");
+        // cy.get('[name="first_name"]').type(data.first_name);
+        // cy.get('[name="last_name"]').type(data.last_name);
+        // cy.get('[name="email"]').type(data.email);
+        // cy.get('textarea.feedback-input').type("this is my demo feedback");
+        cy.webDriverUni_contactForm_submission(
+            data.first_name,
+            data.last_name,
+            data.email,
+            "this is my demo feedback"
+        );
+
+
         cy.get('[type="submit"]').click()
 
         // predict: cross verify: assertion
@@ -37,7 +45,7 @@ describe("Test contact us page form via WebdriverUni", () => {
 
     it("Should not be able to submit a successful submission via contact us form as all field are required", () => {
         cy.visit(landingPageUrl);
-        cy.get("#contact-us").invoke("removeAttr", "target").click({force:true});
+        cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
 
         cy.get('[type="submit"]').click()
 
