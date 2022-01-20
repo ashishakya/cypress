@@ -19,7 +19,14 @@
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
+
+Cypress.Commands.add("selectProduct", productName=>{
+    cy.get(".fixed_wrapper .prdocutname").each((el)=>{
+        if(el.text().includes(productName)){
+            cy.wrap(el).click() // el is an jquery instance hence wrap helps us to wrap it as a cypres instance
+        }
+    })
+})
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
