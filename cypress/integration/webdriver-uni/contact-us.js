@@ -7,6 +7,10 @@ const landingPageUrl = "http://webdriveruniversity.com";
 const assert = require("assert");
 import Homepage_PO from "../../support/pageObjects/webDriverUni/homepage_PO";
 describe("Test contact us page form via WebdriverUni", () => {
+    Cypress.config({
+        defaultCommandTimeout:20000,
+    })
+
     // load the data once before the test executes
     before(() => {
         cy.log(Cypress.env("first_name"))
@@ -60,11 +64,7 @@ describe("Test contact us page form via WebdriverUni", () => {
         )
 
 
-        cy.get('[type="submit"]').click()
 
-        // predict: cross verify: assertion
-        const successMessage = "Thank You for your Message!";
-        cy.get('#contact_reply > h1').should("have.text", successMessage)
     });
 
     it("Should not be able to submit a successful submission via contact us form as all field are required", () => {
