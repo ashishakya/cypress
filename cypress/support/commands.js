@@ -37,13 +37,13 @@ Cypress.Commands.add("addProductToBasket", productName=>{
     })
 })
 
-Cypress.Commands.add("webDriverUni_contactForm_submission", (firstName, lastName, email, feedback)=>{
-    cy.get('[name="first_name"]').type(firstName);
-    cy.get('[name="last_name"]').type(lastName);
-    cy.get('[name="email"]').type(email);
-    cy.get('textarea.feedback-input').type(feedback);
-
-})
+// Cypress.Commands.add("webDriverUni_contactForm_submission", (firstName, lastName, email, feedback)=>{
+//     cy.get('[name="first_name"]').type(firstName);
+//     cy.get('[name="last_name"]').type(lastName);
+//     cy.get('[name="email"]').type(email);
+//     cy.get('textarea.feedback-input').type(feedback);
+//
+// })
 
 Cypress.Commands.add("navigateToWebDriverUniHomePage", ()=>{
     cy.visit("/")
