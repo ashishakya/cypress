@@ -3,6 +3,8 @@
   "chromeWebSecurity": true,
   "pageLoadTimeout": 30000,
   "env": {
-      "first_name": "first name from cypress.json env"
+    "first_name": "first name from cypress.json env",
+    "web_driver_home_page_url": "http://webdriveruniversity.com",
+    "automation_test_store_home_page_url": "https://automationteststore.com"
   }
 }

@@ -3,7 +3,7 @@
 // const landingPageUrl = "http://webdriveruniversity.com/Contact-Us/contactus.html";
 const landingPageUrl = "http://webdriveruniversity.com";
 const assert = require("assert");
-
+import Homepage_PO from "../../support/pageObjects/webDriverUni/homepage_PO";
 describe("Test contact us page form via WebdriverUni", () => {
     // load the data once before the test executes
     before(() => {
@@ -18,7 +18,7 @@ describe("Test contact us page form via WebdriverUni", () => {
         cy.visit('/'); // use of base url in cypress.json
         // cy.visit('https://google.com') // this will error
 
-        // cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
+        cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
         cy.document().should("have.property", "charset", "UTF-8")
         cy.title().should('eq', 'WebDriver | Contact Us')
         cy.url().should('include', 'contactus.html') // => true
@@ -45,9 +45,18 @@ describe("Test contact us page form via WebdriverUni", () => {
     });
 
     it.only("Should not be able to submit a successful submission via contact us form as all field are required", () => {
+        // way 1
         // cy.visit(landingPageUrl);
-        cy.navigateToWebDriverUniHomePage()
-        cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
+
+        // way 2
+        // cy.navigateToWebDriverUniHomePage()
+
+        // way 3
+        const homePage_PO = new Homepage_PO();
+        homePage_PO.visitHomePage();
+        homePage_PO.clickOnContactUsButton()
+
+        // cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
 
         cy.get('[type="submit"]').click()
 
