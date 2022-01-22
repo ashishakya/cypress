@@ -1,4 +1,8 @@
 {
+  "baseUrl": "http://webdriveruniversity.com",
   "chromeWebSecurity": true,
-  "pageLoadTimeout": 30000
+  "pageLoadTimeout": 30000,
+  "env": {
+      "first_name": "first name from cypress.json env"
+  }
 }

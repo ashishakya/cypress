@@ -44,6 +44,10 @@ Cypress.Commands.add("webDriverUni_contactForm_submission", (firstName, lastName
     cy.get('textarea.feedback-input').type(feedback);
 
 })
+
+Cypress.Commands.add("navigateToWebDriverUniHomePage", ()=>{
+    cy.visit("/")
+})
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })

@@ -7,17 +7,18 @@ const assert = require("assert");
 describe("Test contact us page form via WebdriverUni", () => {
     // load the data once before the test executes
     before(() => {
+        cy.log(Cypress.env("first_name"))
         cy.fixture("example.json").then((data) => {
             // this.data = data;
             globalThis.data = data // this works as well
         })
     })
-    it.only("Should be able to submit a successful submission via contact us form", () => {
+    it("Should be able to submit a successful submission via contact us form", () => {
         //prepare
-        cy.visit(landingPageUrl);
+        cy.visit('/'); // use of base url in cypress.json
         // cy.visit('https://google.com') // this will error
 
-        cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
+        // cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
         cy.document().should("have.property", "charset", "UTF-8")
         cy.title().should('eq', 'WebDriver | Contact Us')
         cy.url().should('include', 'contactus.html') // => true
@@ -43,8 +44,9 @@ describe("Test contact us page form via WebdriverUni", () => {
         cy.get('#contact_reply > h1').should("have.text", successMessage)
     });
 
-    it("Should not be able to submit a successful submission via contact us form as all field are required", () => {
-        cy.visit(landingPageUrl);
+    it.only("Should not be able to submit a successful submission via contact us form as all field are required", () => {
+        // cy.visit(landingPageUrl);
+        cy.navigateToWebDriverUniHomePage()
         cy.get("#contact-us").invoke("removeAttr", "target").click({force: true});
 
         cy.get('[type="submit"]').click()
