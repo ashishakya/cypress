@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:test": "./node_modules/.bin/cypress run",
+    "cypress:headless_test": "./node_modules/.bin/cypress run",
     "cypress:headed_test": "./node_modules/.bin/cypress run --headed --browser chrome",
     "junit:merge_report": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "junit:remove_report": "rm -rf cypress/results/junit/results.xml",
-    "junit:remove_reports": "rm -rf cypress/results/*"
+    "junit:remove_reports": "rm -rf cypress/results/*",
+    "mochawesome:merge_report": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "mochawesome:remove_reports": "yarn junit:remove_reports && rm -rf mochawesome-report/* || true"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,9 @@
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.5.0",
     "cypress-xpath": "^1.6.2",
-    "mocha-junit-reporter": "^2.0.2"
+    "mocha-junit-reporter": "^2.0.2",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1"
   }
 }
