@@ -10,6 +10,7 @@ class ContactUs_PO {
         // predict: cross verify: assertion
         const successMessage = "Thank You for your Message!";
         cy.get('#contact_reply > h1').should("have.text", successMessage)
+        cy.screenshot()
     }
 }
 
