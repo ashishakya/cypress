@@ -8,7 +8,9 @@
     "cypress:open": "./node_modules/.bin/cypress open",
     "cypress:test": "./node_modules/.bin/cypress run",
     "cypress:headed_test": "./node_modules/.bin/cypress run --headed --browser chrome",
-    "cypress:junit_merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml"
+    "junit:merge_report": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "junit:remove_report": "rm -rf cypress/results/junit/results.xml",
+    "junit:remove_reports": "rm -rf cypress/results/*"
   },
   "repository": {
     "type": "git",
