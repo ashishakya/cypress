@@ -10,6 +10,8 @@ describe("Verify add multiple items to basket", () => {
     const hairCarePo = new HairCare_Po()
 
     before( ()=>{
+        cy.clearLocalStorage();
+        cy.clearCookies();
         cy.fixture("products.json").then((data)=>{
             globalThis.data = data
         })
