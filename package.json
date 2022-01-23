@@ -22,7 +22,9 @@
   "homepage": "https://github.com/ashishakya/cypress#readme",
   "devDependencies": {
     "cypress": "8.4.1",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-multi-reporters": "^1.5.0",
     "cypress-xpath": "^1.6.2",
-    "cypress-file-upload": "^5.0.8"
+    "mocha-junit-reporter": "^2.0.2"
   }
 }

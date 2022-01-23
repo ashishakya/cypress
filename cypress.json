@@ -2,10 +2,14 @@
   "baseUrl": "http://webdriveruniversity.com",
   "chromeWebSecurity": true,
   "pageLoadTimeout": 30000,
-  "projectId": "vtqbo4q",
+  "projectId": "vtqbo4",
   "env": {
     "first_name": "first name from cypress.json env",
     "web_driver_home_page_url": "http://webdriveruniversity.com",
     "automation_test_store_home_page_url": "https://automationteststore.com"
+  },
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
   }
 }
