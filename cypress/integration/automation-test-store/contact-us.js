@@ -5,6 +5,7 @@ const assert = require("assert");
 
 describe("Test contact us page form via Automation Test Store", () => {
     before(()=>{
+        cy.viewport(550, 750)
         cy.fixture("userDetails.json").as("user").then((data)=>{
             // this.data = data;
             globalThis.data =data // this works as well
