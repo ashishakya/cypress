@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:open_with_staging_config": "yarn cypress:open --config-file cypress/config/staging.json",
     "cypress:headless_test": "./node_modules/.bin/cypress run",
     "cypress:headed_test": "./node_modules/.bin/cypress run --headed --browser chrome",
     "junit:merge_report": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
