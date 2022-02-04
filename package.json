@@ -9,6 +9,8 @@
     "cypress:open_with_staging_config": "yarn cypress:open --config-file cypress/config/staging.json",
     "cypress:headless_test": "./node_modules/.bin/cypress run",
     "cypress:headed_test": "./node_modules/.bin/cypress run --headed --browser chrome",
+    "cypress:headless_test_for_webDriverUni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
+    "cypress:headless_test_for_autoStore": "npx cypress run --spec 'cypress/integration/automation-test-store/*.js'",
     "junit:merge_report": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "junit:remove_report": "rm -rf cypress/results/junit/results.xml",
     "junit:remove_reports": "rm -rf cypress/results/*",
