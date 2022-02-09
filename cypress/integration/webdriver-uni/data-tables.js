@@ -25,6 +25,6 @@ describe("Handling data via web driver uni", () => {
     })
 
     it.only('Verify the age based on the lastname from data table', function () {
-        cy.get("#thumbnail-1 td").contains("Jackson").next().should("contain.text", 45)
+        cy.get("#thumbnail-1 td").contains("Jackson").next().should("contain.text", 94)
     })
 })
