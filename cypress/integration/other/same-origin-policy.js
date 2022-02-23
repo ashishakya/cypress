@@ -4,8 +4,8 @@ describe("Cypress wen security ", ()=>{
     //         cy.visit("www.youtube.com")
     // });
 
-    it('Validate visiting two different domains via user action', function () {
-        cy.visit("http://webdriveruniversity.com");
-        cy.get('#automation-test-store').invoke("removeAttr", "target").click();
-    });
+    // it('Validate visiting two different domains via user action', function () {
+    //     cy.visit("http://webdriveruniversity.com");
+    //     cy.get('#automation-test-store').invoke("removeAttr", "target").click();
+    // });
 })
